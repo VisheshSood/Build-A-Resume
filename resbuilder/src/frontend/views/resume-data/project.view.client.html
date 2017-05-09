@@ -1,0 +1,30 @@
+<div ng-repeat="p in model.projectList">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-block">
+                <div href="#" class="list-group-item list-group-item-bordered">
+                    <h3 class="list-group-item-heading">{{p.title}}</h3>
+                    <h5 class="list-group-item-text">{{p.startDate}}-{{p.endDate}}</h5>
+                    <h5 class="list-group-item-text">{{p.description}}</h5>
+                    <br/>
+                    <div>
+                        <label>Team Members</label>
+                        <p>{{p.teammates.join(", ")}}</p>
+                    </div>
+                    <br/>
+                    <div>
+                        <label>Technologies</label>
+                        <p>
+                            {{p.technologies.join(', ')}}
+                        </p>
+                    </div>
+                    <br/>
+                    <div>
+                        <label>Project Url</label>
+                        <p>{{p.projectUrl}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

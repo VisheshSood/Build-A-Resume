@@ -1,0 +1,322 @@
+.container-if-fixed-header
+{
+    margin-top:70px;
+}
+.container-if-fixed-footer
+{
+    margin-bottom:80px;
+}
+
+#mycontent-left {
+    float: left;
+    height: 200px;
+    width: 100%;
+}
+
+#mycontent-right:after {
+    content: "";
+    background-color: #000;
+    position: absolute;
+    width: 1px;
+    height: 1200px;
+    display: block;
+}
+
+#mycontent-right {
+    float: right;
+    width: 100%;
+}
+
+.margin-top-pb
+{
+    margin-top: 100px;
+}
+
+tags-input .tags .tag-item
+{
+    display: inline-block;
+    padding-left:10px;
+    padding-right: 10px;
+    margin:2px;
+    margin-top: 10px;
+    background: #2c3e50 !important;
+    float: left;
+}
+tags-input .tags input
+{
+    display: inline-block;
+    margin:5px;
+    line-height:2 !important;
+}
+
+.addeducation-large
+{
+    float: right;
+    width: 95%;
+}
+
+
+.addproject-large
+{
+    float: right;
+    width: 95%;
+}
+.url-pb-class
+{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.list-group-item-bordered
+{
+    border: 1px solid #cccccc;
+}
+
+.pb-margin-resume-data
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.pb-div-center
+{
+    text-align: center;
+}
+
+
+.login-border{
+    border: 1px solid #cccccc !important;
+}
+
+.card-header{
+    height:8em;
+    background-color: #2c3e50;
+    color:white;
+}
+
+.signin-background{
+    background-color:#d0d8e0;
+    padding-top:50px;
+    padding-bottom:50px;
+
+}
+
+
+
+.box-padding{
+    padding-bottom:10px;
+}
+
+
+.login-box{
+    background-color: white;
+}
+
+
+
+.job-box{
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color: #ecf0f1;
+    margin-left:5px;
+    margin-top:5px;
+    word-wrap: break-word;
+}
+
+
+
+.card-recruiter{
+    height:8em;
+    background-color: #e74c3c;
+    color:white;
+}
+
+
+.custom-card {
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    height: 300px;
+    margin: 1rem;
+    position: relative;
+    width: 300px;
+}
+
+.custom-card-v2 {
+    background: #f9f9f9;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 1rem;
+    position: relative;
+    width: 100%;
+    padding-bottom: 20px;
+
+}
+
+.custom-card-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.custom-card-1:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.custom-card-2 {
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.custom-card-2:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+.message-header{
+    background:#2c3e50;
+    color:white;
+    padding-top:20px;
+    padding-bottom:20px;
+
+}
+
+.message-badge{
+    color:white !important;
+    background-color: #e74c3c !important;
+}
+
+.jumbo-tag-1{
+    font-size:1.5em;
+    color: #c0392b;
+}
+
+.jumbo-tag-2{
+    font-size: 1.5em;
+    color: #f5f5f5;
+}
+
+
+
+
+/*loader*/
+#loader {
+    bottom: 0;
+    height: 175px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 175px;
+}
+#loader {
+    bottom: 0;
+    height: 175px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 175px;
+}
+#loader .dot {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 87.5px;
+}
+#loader .dot::before {
+    border-radius: 100%;
+    content: "";
+    height: 87.5px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: scale(0);
+    width: 87.5px;
+}
+#loader .dot:nth-child(7n+1) {
+    transform: rotate(45deg);
+}
+#loader .dot:nth-child(7n+1)::before {
+    animation: 0.8s linear 0.1s normal none infinite running load;
+    background: #00ff80 none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+2) {
+    transform: rotate(90deg);
+}
+#loader .dot:nth-child(7n+2)::before {
+    animation: 0.8s linear 0.2s normal none infinite running load;
+    background: #00ffea none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+3) {
+    transform: rotate(135deg);
+}
+#loader .dot:nth-child(7n+3)::before {
+    animation: 0.8s linear 0.3s normal none infinite running load;
+    background: #00aaff none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+4) {
+    transform: rotate(180deg);
+}
+#loader .dot:nth-child(7n+4)::before {
+    animation: 0.8s linear 0.4s normal none infinite running load;
+    background: #0040ff none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+5) {
+    transform: rotate(225deg);
+}
+#loader .dot:nth-child(7n+5)::before {
+    animation: 0.8s linear 0.5s normal none infinite running load;
+    background: #2a00ff none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+6) {
+    transform: rotate(270deg);
+}
+#loader .dot:nth-child(7n+6)::before {
+    animation: 0.8s linear 0.6s normal none infinite running load;
+    background: #9500ff none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+7) {
+    transform: rotate(315deg);
+}
+#loader .dot:nth-child(7n+7)::before {
+    animation: 0.8s linear 0.7s normal none infinite running load;
+    background: magenta none repeat scroll 0 0;
+}
+#loader .dot:nth-child(7n+8) {
+    transform: rotate(360deg);
+}
+#loader .dot:nth-child(7n+8)::before {
+    animation: 0.8s linear 0.8s normal none infinite running load;
+    background: #ff0095 none repeat scroll 0 0;
+}
+#loader .lading {
+    background-image: url("../images/loading.gif");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    bottom: -40px;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 180px;
+}
+@keyframes load {
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+@keyframes load {
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}

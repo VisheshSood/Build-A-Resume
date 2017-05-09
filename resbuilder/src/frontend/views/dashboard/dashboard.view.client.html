@@ -1,0 +1,60 @@
+
+<script src="http://rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
+<div ng-include="'./views/menu/menu.view.client.html'"></div>
+<div class="container container-if-fixed-header">
+    <div class="row">
+        <div class="form-group url-pb-class">
+            <br>
+            <div class="form-group">
+                <div class="col-lg-12">
+                    <span class="form-control help-block"  ng-show="model.error" ng-model="model.error" disabled="">{{model.error}}</span>
+                </div>
+            </div>
+            <label class="control-label">Job Description URL:</label>
+            <div class="input-group">
+                <input ng-model="model.JobURL" type="text" class="form-control">
+                <span class="input-group-btn">
+                    <a class="btn btn-success btn-block" ng-click="model.GetResumeData(0)">
+                        Create Resume
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-12">
+            <legend>Jobs You May Like (from GitHub Jobs)</legend>
+        </div>
+        <br/>
+        <div>
+            <div class="col-md-5 job-box" ng-repeat="j in model.jobList">
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <img class="img-responsive pull-left" src="{{j.company_logo}}" height=64 width=64/>
+                    </div>
+                    <br/>
+                      <h4>{{j.title}}</h4>
+                </div>
+                <div class="col-md-12">
+                    <div>
+                        <a href="{{j.url}}">{{j.url}}</a>
+                        <hr/>
+                        <a ng-click="model.GetResumeData(j.url)"  class="btn btn-primary btn-sm">Generate Resume</a>
+                        <a href="#/user/{{model.uid}}/savejob?jobUrl={{j.url}}&companyName={{j.company}}"  class="btn btn-primary btn-sm">Save Job</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <hr/>
+    <div class="row mt40">
+        <div class="col-md-12">
+            <legend> Your Recent Resumes</legend>
+        </div>
+        <section>
+            <ng-include src="'views/resumes/resume-thumbnail.view.client.html'"></ng-include>
+        </section>
+    </div>
+</div>
