@@ -134,13 +134,13 @@
         function onCreateUserSuccess(response) {
 
             var user = response;
-            vm.success = "Registration Successful! Goto home page to login.";
+            vm.success = "Registration Successful! Please go to home page to login.";
         }
 
 
         function onCreateUserFailure(err) {
 
-            vm.error = "Failed to create user. Please try again after sometime.";
+            vm.error = "Server Down.";
         }
 
     }
