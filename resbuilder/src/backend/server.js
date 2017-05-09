@@ -15,7 +15,7 @@ var app = express();
 
 
 app.use(session({
-    secret: 'HGDSGHD34534fsdfsEERGDTHF',
+    secret: 'UT2JJKf376T2j4D5',
     resave: true,
     saveUninitialized: true
 }));

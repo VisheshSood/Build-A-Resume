@@ -33,8 +33,8 @@ module.exports = function (app, mongooseAPI, passport) {
     passport.use(new LocalStrategy({passReqToCallback: true}, localStrategy));
 
     passport.use(new LinkedInStrategy({
-            consumerKey: process.env.LINKEDIN_API_KEY,
-            consumerSecret: process.env.LINKEDIN_SECRET_KEY,
+            consumerKey: '78a2stcmj3ta57',
+            consumerSecret: 'UT2JJKf376T2j4D5',
             callbackURL: "/api/user/linkedin/callback",
             profileFields: ['id', 'first-name', 'last-name', 'email-address', 'headline','positions','specialties'],
         },
