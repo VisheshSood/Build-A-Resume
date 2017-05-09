@@ -1,5 +1,3 @@
-
-
 (function () {
 
     angular
@@ -21,18 +19,11 @@
             vm.checkRePassword = null;
             vm.checkFirstName = null;
             vm.checkEmail = null;
-
-            //vm.checkUsernameAvailability = checkUsernameAvailability;
             vm.register = register;
         }
 
         init();
 
-
-        /*
-         * validates user fields.
-         *
-         */
         function register(user) {
 
             if(!validateUser(user)){
@@ -45,10 +36,6 @@
             promise.error(onCreateUserFailure);
         }
 
-
-        /*
-         * validates if user fields are non empty and passwords match.
-         */
         function validateUser(user) {
 
             var isValid = true;
@@ -58,7 +45,7 @@
             } else {
 
                 if(isEmptyOrNull(user.password)) {
-                    vm.checkPassword = "Password can not be empty";
+                    vm.checkPassword = "Password cannot be empty";
                     isValid = false;
                 } else if(isEmptyOrNull(user.repassword)) {
                     vm.checkRePassword = "Please retype passoword";
@@ -99,28 +86,6 @@
         }
 
 
-
-        /*
-         * Checks if username is available for registering.
-         */
-        function checkUsernameAvailability(username){
-
-            //var promise = UserService.checkUsernameAvailable(username);
-
-            //promise.success(onCheckUsernameAvailableSuccess);
-            //promise.error(onCheckUsernameAvailableError);
-
-        }
-
-        // /*sets helper message if username is not available.*/
-        // function onCheckUsernameAvailableSuccess(response) {
-        //     if(response.isAvailable == false){
-        //         vm.checkUsername = "username not available.";
-        //     }
-        //     else{
-        //         vm.checkUsername = "username available";
-        //     }
-        // }
 
 
         /*sets helper message if username availability check failed.*/
