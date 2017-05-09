@@ -72,7 +72,7 @@
             }
 
             function onLoginFailure(response) {
-                vm.error = "Could not find user. Error: " + response;
+                vm.error = "Could not find user. Incorrect password.";
             }
 
 

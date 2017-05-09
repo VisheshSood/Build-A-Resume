@@ -22,7 +22,7 @@
             vm.checkFirstName = null;
             vm.checkEmail = null;
 
-            vm.checkUsernameAvailability = checkUsernameAvailability;
+            //vm.checkUsernameAvailability = checkUsernameAvailability;
             vm.register = register;
         }
 
@@ -105,22 +105,22 @@
          */
         function checkUsernameAvailability(username){
 
-            var promise = UserService.checkUsernameAvailable(username);
+            //var promise = UserService.checkUsernameAvailable(username);
 
-            promise.success(onCheckUsernameAvailableSuccess);
-            promise.error(onCheckUsernameAvailableError);
+            //promise.success(onCheckUsernameAvailableSuccess);
+            //promise.error(onCheckUsernameAvailableError);
 
         }
 
-        /*sets helper message if username is not available.*/
-        function onCheckUsernameAvailableSuccess(response) {
-            if(response.isAvailable == false){
-                vm.checkUsername = "username not available.";
-            }
-            else{
-                vm.checkUsername = "username available";
-            }
-        }
+        // /*sets helper message if username is not available.*/
+        // function onCheckUsernameAvailableSuccess(response) {
+        //     if(response.isAvailable == false){
+        //         vm.checkUsername = "username not available.";
+        //     }
+        //     else{
+        //         vm.checkUsername = "username available";
+        //     }
+        // }
 
 
         /*sets helper message if username availability check failed.*/

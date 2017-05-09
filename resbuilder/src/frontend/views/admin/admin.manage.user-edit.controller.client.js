@@ -40,15 +40,15 @@
 
         }
 
-        /*sets helper message if username is not available.*/
-        function onCheckUsernameAvailableSuccess(response) {
-            if(response.isAvailable == false){
-                vm.checkUsername = "username not available.";
-            }
-            else{
-                vm.checkUsername = "username available";
-            }
-        }
+        // /*sets helper message if username is not available.*/
+        // function onCheckUsernameAvailableSuccess(response) {
+        //     if(response.isAvailable == false){
+        //         vm.checkUsername = "username not available.";
+        //     }
+        //     else{
+        //         vm.checkUsername = "username available";
+        //     }
+        // }
 
         /*ends the session.*/
         function logout() {
