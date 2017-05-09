@@ -1,9 +1,8 @@
 <div ng-include="'./views/menu/menu.view.client.html'"></div>
-
 <div class="container container-if-fixed-header">
 
       <div class="row">
-           <div class="col-sm-12 col-xs-12 col-lg-6 col-md-6 custom-card-2">
+           <div class="col-sm-12 col-xs-12 col-lg-6 col-md-6">
                <div>
                    <br/>
                    <form name="userForm"class="form-horizontal" novalidate>
@@ -76,7 +75,7 @@
                            <div class="form-group">
                                <label for="github" class="col-lg-2 control-label">GitHub</label>
                                <div class="col-lg-10">
-                                   <input type="text" name="github" class="form-control" id="github" ng-model="model.user.githubUrl" placeholder="GitHub Url">
+                                   <input type="text" name="github" class="form-control" id="github" ng-model="model.user.githubUrl" placeholder="GitHub URL">
                                </div>
 
                            </div>
@@ -84,20 +83,11 @@
                            <div class="form-group">
                                <label for="personalurl" class="col-lg-2 control-label">Personal Website</label>
                                <div class="col-lg-10">
-                                   <input type="text" name="personalWebsite" class="form-control" id="personalurl" ng-model="model.user.personalWebsite" placeholder="Personal Website Url">
+                                   <input type="text" name="personalWebsite" class="form-control" id="personalurl" ng-model="model.user.personalWebsite" placeholder="Personal Website URL">
                                </div>
                            </div>
-
-                           <div class="form-group">
-                               <label class="col-lg-2 control-label">Make Profile Public</label>
-                               <div class="col-lg-10">
-                                   <toggle-switch ng-model="model.user.isPublic" class="switch-primary"></toggle-switch>
-                               </div>
-                           </div>
-
                            <hr/>
-                           <br/>
-                           <br/>
+
                            <div class="form-group">
                                <div class="col-lg-10 col-lg-offset-2">
                                    <button type="submit" class="btn btn-block btn-primary" ng-click="userForm.$valid && model.updateUser(model.user)">Update</button>
@@ -109,7 +99,7 @@
             </div>
 
 
-          <div class="col-sm-12 col-xs-12 col-lg-6 col-md-6 custom-card-2">
+          <div class="col-sm-12 col-xs-12 col-lg-6 col-md-6">
               <div>
                   <br/>
                   <br/>

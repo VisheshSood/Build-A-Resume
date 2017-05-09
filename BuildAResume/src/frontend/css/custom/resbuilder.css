@@ -7,6 +7,10 @@
     margin-bottom:80px;
 }
 
+#form-group {
+    margin-top: 15px !important; 
+}
+
 #mycontent-left {
     float: left;
     height: 200px;
@@ -41,15 +45,21 @@ tags-input .tags .tag-item
     margin-top: 10px;
     background: #2c3e50 !important;
     float: left;
+    font-size: 15px;
     
 }
 tags-input .tags input
 {
     display: inline-block;
-    margin:5px;
-    line-height:2 !important;
+    margin: 2em;
+    /*line-height: 1px!important;*/
+    font-size: 10px;
+    height: 30px !important;
 }
 
+tags-input input {
+    width: 100px !important;
+}
 .addeducation-large
 {
     float: right;
