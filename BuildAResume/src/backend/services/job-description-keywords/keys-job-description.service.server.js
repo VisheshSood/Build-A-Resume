@@ -1,7 +1,3 @@
-/**
- * Created by panktibhalani on 4/4/17.
- */
-
 module.exports = function (app,mongooseAPI) {
 
     var fs = require('fs');
@@ -50,6 +46,7 @@ module.exports = function (app,mongooseAPI) {
                     output = out
                     getData(userId)
                         .then(function (jsonOut) {
+                            console.log(jsonOut);
                             resolve(jsonOut)
                         });
                 });
@@ -146,7 +143,6 @@ module.exports = function (app,mongooseAPI) {
         return new Promise(function (resolve,reject) {
             var PythonShell = require('python-shell');
             var options = {
-                //args: ['https://boards.greenhouse.io/endurance/jobs/645924#.WOL6CxLyto4'],
                 args:[url],
                 scriptPath: __dirname
             };
@@ -156,7 +152,7 @@ module.exports = function (app,mongooseAPI) {
                 }
                 else {
                     output = results
-
+                    console.log(output);
                     resolve(output)
                 }
             });
