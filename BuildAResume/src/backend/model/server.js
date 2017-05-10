@@ -9,7 +9,6 @@ module.exports = function (app) {
             process.env.MLAB_HOST + ':' +
             process.env.MLAB_PORT + '/' +
             process.env.MLAB_APP_NAME;
-        console.print(connectionString);
     }
 
     var mongoose = require("mongoose");
