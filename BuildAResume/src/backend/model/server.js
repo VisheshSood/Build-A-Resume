@@ -1,7 +1,7 @@
 module.exports = function (app) {
 
 
-    var connectionString = 'test';
+    var connectionString = 'mongodb://34.209.17.36:27017/test';
 
     if(process.env.MLAB_USERNAME) {
         connectionString = process.env.MLAB_USERNAME + ":" +
@@ -9,6 +9,7 @@ module.exports = function (app) {
             process.env.MLAB_HOST + ':' +
             process.env.MLAB_PORT + '/' +
             process.env.MLAB_APP_NAME;
+        console.print(connectionString);
     }
 
     var mongoose = require("mongoose");
