@@ -1,3 +1,9 @@
+/**
+ * Created by panktibhalani on 3/31/17.
+ */
+
+
+
 module.exports = function (app,mongooseAPI) {
 
     var fs = require('fs');
@@ -44,7 +50,6 @@ module.exports = function (app,mongooseAPI) {
         var doc = docx.create();
         var title = docx.createText(data['user']['firstName'] + " " + data['user']['lastName']);
         title.bold();
-        title.allCaps();
         var paragraph = docx.createParagraph();
         paragraph.addText(title)
         paragraph.title().center();
@@ -125,15 +130,15 @@ module.exports = function (app,mongooseAPI) {
             var lang = docx.createText("Languages:").bold()
             var list_lang = docx.createText(data['technical']['languages'].join(", ")).tab();
             paragraph1.addText(lang);
-            paragraph1.addText(list_lang.allCaps());
+            paragraph1.addText(list_lang);
         }
 
 //Web Technologies
         if (x != 0) {
-            var lang = docx.createText("Technologies:").bold().break()
+            var lang = docx.createText("Web Technologies:").bold().break()
             var list_lang = docx.createText(data['technical']['technologies'].join(", ")).tab();
             paragraph1.addText(lang)
-            paragraph1.addText(list_lang.allCaps());
+            paragraph1.addText(list_lang);
         }
 
 // //software
@@ -141,16 +146,16 @@ module.exports = function (app,mongooseAPI) {
             var lang = docx.createText("Software:").bold().break()
             var list_lang = docx.createText(data['technical']['softwares'].join(", ")).tab();
             paragraph1.addText(lang);
-            paragraph1.addText(list_lang.allCaps());
+            paragraph1.addText(list_lang);
         }
 
 //Database
         if(c != 0) {
 
-            var lang = docx.createText("Skills:").bold().break()
+            var lang = docx.createText("Database:").bold().break()
             var list_lang = docx.createText(data['technical']['database'].join(", ")).tab();
             paragraph1.addText(lang);
-            paragraph1.addText(list_lang.allCaps());
+            paragraph1.addText(list_lang);
 
         }
 
@@ -159,7 +164,7 @@ module.exports = function (app,mongooseAPI) {
             var lang = docx.createText("Operating Systems:").bold().break()
             var list_lang = docx.createText(data['technical']['operatingSystems'].join(", ")).tab();
             paragraph1.addText(lang);
-            paragraph1.addText(list_lang.allCaps());
+            paragraph1.addText(list_lang);
 
         }
         doc.addParagraph(paragraph1)
