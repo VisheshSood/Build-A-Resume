@@ -6,7 +6,7 @@
                     <div class="col-lg-9">
                         <input name="title" required type="text" class="form-control" id="title" ng-model="model.project.title" placeholder="Project Title">
                         <div ng-messages="projectForm.title.$touched && projectForm.title.$error">
-                            <p class="text-warning" ng-message="required">the title for project is required.</p>
+                            <p class="text-warning" ng-message="required">Project Title is required. </p>
                         </div>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
                     <label for="textArea" class="col-lg-3 control-label">Description</label>
                     <div class="col-lg-9">
                         <textarea class="form-control" rows="3" id="textArea" ng-model="model.project.description"></textarea>
-                        <span class="help-block">It is better to have short descriptive sentences. Like: <br/><br/> Wrote stats scrapper to analyze trending actors in R. Designed and wrote test cases in JUnit.</span>
+                        <span class="help-block">Have a short description that explains the project for recruiters to see. <br><br>Example: Wrote stats scrapper to analyze trending actors in R. Designed and wrote test cases in JUnit.</span>
                     </div>
                 </div>
 
@@ -25,9 +25,9 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Technologies</label>
                     <div class="col-lg-9">
-                        <tags-input required name="technology" replace-spaces-with-dashes="false" min-length="2" type="text" ng-model="model.project.technologies" placeholder="Technologies"></tags-input>
+                        <tags-input name="technology" replace-spaces-with-dashes="false" min-length="2" type="text" ng-model="model.project.technologies" placeholder="Technologies"></tags-input>
                         <div ng-messages="projectForm.technology.$touched && projectForm.technology.$error">
-                            <p class="text-warning" ng-message="required">the title for technology is required.</p>
+                            <p class="text-warning" ng-message="required">Give a few examples of tools used in the project.</p>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                     <div class="col-lg-9">
                         <input type="text" name="startdate" required class="form-control" id="startdate" ng-model="model.project.startDate" placeholder="MM/YYYY">
                         <div ng-messages="projectForm.startdate.$touched && projectForm.startdate.$error">
-                            <p class="text-warning" ng-message="required">the start date is required.</p>
+                            <p class="text-warning" ng-message="required">Please enter a start date!</p>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                     <div class="col-lg-9">
                         <input type="text" name="enddate" required class="form-control" id="enddate" ng-model="model.project.endDate" placeholder="MM/YYYY">
                         <div ng-messages="projectForm.enddate.$touched && projectForm.enddate.$error">
-                            <p class="text-warning" ng-message="required">the end date is required.</p>
+                            <p class="text-warning" ng-message="required">Please enter an end date!</p>
                         </div>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="field" class="col-lg-3 control-label">Project Url</label>
+                    <label for="field" class="col-lg-3 control-label">Project Link</label>
                     <div class="col-lg-9">
                         <input type="text" class="form-control" id="field" ng-model="model.project.projectUrl" placeholder="Link to project url">
                     </div>
