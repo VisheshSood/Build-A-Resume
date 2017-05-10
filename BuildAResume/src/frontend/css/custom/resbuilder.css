@@ -18,12 +18,16 @@
 }
 
 #mycontent-right:after {
-    content: "";
+    /*content: "";*/
     background-color: #000;
     position: absolute;
     width: 1px;
     height: 1200px;
     display: block;
+}
+
+.fa {
+    color: black;
 }
 
 #mycontent-right {

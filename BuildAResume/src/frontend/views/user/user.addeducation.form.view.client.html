@@ -1,8 +1,8 @@
-<form name="educationForm" class="form-horizontal" novalidate>
+<form name="educationForm" class="form-horizontal" novalidate >
     <fieldset>
-            <div>
+            <div style="margin-left: -5em;">
                 <div class="form-group">
-                    <label for="school" class="col-lg-3 control-label">School/University</label>
+                    <label for="school" class="col-lg-3 control-label" style="padding-right: 0;">School</label>
                     <div class="col-lg-9">
                         <input type="text" name="school" required class="form-control" id="school" ng-model="model.school.school" placeholder="School/University">
                         <div ng-messages="educationForm.school.$touched && educationForm.school.$error">
@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="startyear" class="col-lg-3 control-label">Start Year</label>
+                    <label for="startyear" class="col-lg-3 control-label" style="padding-right: 0;">Start Year</label>
                     <div class="col-lg-9">
                         <input type="number" name="startyear" required class="form-control" id="startyear" ng-model="model.school.startYear" placeholder="Start Year">
                         <div ng-messages="educationForm.startyear.$touched && educationForm.startyear.$error">
@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="endyear" class="col-lg-3 control-label">End Year</label>
+                    <label for="endyear" class="col-lg-3 control-label" style="padding-right: 0;">End Year</label>
                     <div class="col-lg-9">
                         <input type="text" name="endyear" required class="form-control" id="endyear" ng-model="model.school.endYear" placeholder="End/Expected Year">
                         <div ng-messages="educationForm.endyear.$touched && educationForm.endyear.$error">
@@ -32,14 +32,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-lg-3 control-label">Courses</label>
+                    <label class="col-lg-3 control-label" style="padding-right: 0;">Courses</label>
                     <div class="col-lg-9">
                         <tags-input type="text" ng-model="model.school.courses" placeholder="Course Name" style="width: 100px !important;"></tags-input>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="degree" class="col-lg-3 control-label">Degree</label>
+                    <label for="degree" class="col-lg-3 control-label" style="padding-right: 0;">Degree</label>
                     <div class="col-lg-9">
                         <input type="text" name="degree" required class="form-control" id="degree" ng-model="model.school.degree" placeholder="Degree">
                         <div ng-messages="educationForm.degree.$touched && educationForm.degree.$error">
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="field" class="col-lg-3 control-label">Field</label>
+                    <label for="field" class="col-lg-3 control-label" style="padding-right: 0;">Field</label>
                     <div class="col-lg-9">
                         <input type="text" name="field" required class="form-control" id="field" ng-model="model.school.field" placeholder="Field">
                         <div ng-messages="educationForm.field.$touched && educationForm.field.$error">
@@ -59,13 +59,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="grade" class="col-lg-3 control-label">Grade</label>
+                    <label for="grade" class="col-lg-3 control-label" style="padding-right: 0;">Grade</label>
                     <div class="col-lg-9">
                         <input type="number"  class="form-control" id="grade" ng-model="model.school.grade" placeholder="Grade">
                     </div>
                 </div>
                    <br/>
-                <div class="form-group">
+                <div class="form-group" style="margin-left: 10em;">
                     <div class="col-lg-10 col-lg-offset-1">
                         <a type="submit" ng-click="educationForm.$valid && model.createEducation(model.school)" class="btn center-block btn-primary">Save</a>
                     </div>
