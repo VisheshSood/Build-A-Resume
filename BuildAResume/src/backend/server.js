@@ -34,5 +34,5 @@ var mongooseAPI = require("./model/server")(app);
 
 require("./app.js")(app, mongooseAPI, passport);
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8000;
 app.listen(port);
