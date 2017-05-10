@@ -1,7 +1,7 @@
 module.exports = function (app) {
 
 
-    var connectionString = 'mongodb://34.209.17.36:27017/test';
+    var connectionString = 'mongodb://ec2-34-209-17-36.us-west-2.compute.amazonaws.com:27017/test';
 
     if(process.env.MLAB_USERNAME) {
         connectionString = process.env.MLAB_USERNAME + ":" +
