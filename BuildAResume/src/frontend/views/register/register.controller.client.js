@@ -91,7 +91,6 @@
         /*sets helper message if username availability check failed.*/
         function onCheckUsernameAvailableError(response) {
             vm.checkUsername = null;
-
         }
 
 

@@ -1,5 +1,5 @@
 /**
- * Created by savan on 21/2/17.
+ * Created by Vishesh on 18/4/17.
  */
 module.exports = function(app, mongooseAPI, passport) {
     require("./services/user/user.service.server.js")(app, mongooseAPI, passport);
@@ -15,5 +15,4 @@ module.exports = function(app, mongooseAPI, passport) {
     require("./services/user/resume.service.server")(app, mongooseAPI);
     require("./services/admin/admin.service.server")(app,mongooseAPI);
     require("./services/job/job.service.server")(app,mongooseAPI);
-
 };
