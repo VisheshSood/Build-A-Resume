@@ -32,13 +32,9 @@ module.exports = function (app, mongoose, logger) {
     return api;
 
     function updateUserPasswordByAdmin(userId,newPassWord) {
-
         var deferred = q.defer();
-
         newPassWord = bcrypt.hashSync(newPassWord);
-
         UserModel.findById(userId, function (err, dbUser) {
-
             if(err){
                 logger.error('Unable to find user.' + err);
                 deferred.reject(err);
@@ -55,14 +51,10 @@ module.exports = function (app, mongoose, logger) {
                 });
             }
         });
-
-
         return deferred.promise;
-
     }
 
     function isAdmin(userId) {
-
         var deferred = q.defer();
         UserModel.findById(userId,function (err,user) {
             if(err){
@@ -121,15 +113,6 @@ module.exports = function (app, mongoose, logger) {
         return deferred.promise;
     }
 
-    /*function definitions*/
-
-
-    /*
-     * createUser: Creates a new user in mongo db.
-     * params: user object created similar to UserSchema.
-     * returns: promise.
-     */
-    
     function createUser(user) {
 
         var deferred = q.defer();
@@ -148,14 +131,6 @@ module.exports = function (app, mongoose, logger) {
         return deferred.promise;
     }
 
-
-
-
-    /*
-     * findUserById : find user by user id.
-     * params: userId
-     * returns: promise
-     */
     function findUserById(userId) {
 
         var deferred = q.defer();
@@ -173,13 +148,6 @@ module.exports = function (app, mongoose, logger) {
         return deferred.promise;
     }
 
-
-
-    /*
-     * findUserByUsername: Finds user by username.
-     * params: username
-     * returns: promise
-     */
     function findUserByUsername(username) {
 
         var deferred = q.defer();
@@ -200,17 +168,6 @@ module.exports = function (app, mongoose, logger) {
     }
 
 
-
-    /*
-     * updateUser: updates the user.
-     * params: userId and user object with updated fields.
-     * returns: promise.
-     */
-    /*
-     * updateUser: updates the user.
-     * params: userId and user object with updated fields.
-     * returns: promise.
-     */
     function updateUser(userId, user) {
 
         var deferred = q.defer();
@@ -238,13 +195,6 @@ module.exports = function (app, mongoose, logger) {
         return deferred.promise;
     }
 
-
-
-    /*
-     * deleteUser: deletes user from database.
-     * params: userId
-     * returns: promise
-     */
     function deleteUser(userId) {
 
         var deferred = q.defer();
@@ -262,13 +212,6 @@ module.exports = function (app, mongoose, logger) {
         return deferred.promise;
     }
 
-
-
-
-    /*
-     * Find user by credentials username and password
-     *
-     */
     function findUserByCredentials(username, password) {
         var deferred = q.defer();
 
@@ -331,13 +274,6 @@ module.exports = function (app, mongoose, logger) {
         return deferred.promise;
     }
 
-
-
-
-    /*
-     *
-     *
-     */
     function findUsersForIds(userIdList) {
 
         var deferred = q.defer();
@@ -355,11 +291,6 @@ module.exports = function (app, mongoose, logger) {
         return deferred.promise;
     }
 
-
-
-    /*
-     *
-     */
     function getAdminInfo() {
         var deferred = q.defer();
 

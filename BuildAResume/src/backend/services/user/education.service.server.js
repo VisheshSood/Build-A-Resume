@@ -10,9 +10,7 @@ module.exports = function (app, mongooseAPI) {
     app.get("/api/education/user/:userId", checkAuthorizedUser, getEducationForUser);
     app.put("/api/education/:educationId", checkAuthorizedUser, updateEducation);
     app.delete("/api/education/:educationId", checkAuthorizedUser, deleteEducation);
-
-
-
+    
     var EducationModel = mongooseAPI.educationModelAPI;
 
 
@@ -23,17 +21,7 @@ module.exports = function (app, mongooseAPI) {
             next();
         }
     }
-    
-    /*
-     *  Handlers
-     */
 
-    
-    
-
-    /*
-     * Handler for POST call /api/user
-     */
     function createEducation(req, res) {
 
         var education = req.body;

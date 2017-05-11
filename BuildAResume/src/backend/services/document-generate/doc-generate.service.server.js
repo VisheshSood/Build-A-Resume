@@ -214,9 +214,6 @@ module.exports = function (app,mongooseAPI) {
                 output.on('finish', function () {
                     createPDF(req, res,filename,userId);
                 });
-
-
-
     }
 
 
