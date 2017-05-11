@@ -37,10 +37,6 @@ module.exports = function (app) {
     require('./recruiter/recruiter.schema.server')(app, mongoose);
     var recruiterModelAPI = require('./recruiter/recruiter.model.server')(app, mongoose, logger);
 
-
-    require('./message/message.schema.server')(app, mongoose);
-    var messageModelAPI = require('./message/message.model.server')(app, mongoose, logger);
-
     require('./job/job.schema.server')(app, mongoose);
     var jobModelAPI = require('./job/job.model.server')(app, mongoose, logger);
 
@@ -53,7 +49,6 @@ module.exports = function (app) {
         workExpModelAPI:workExpModelAPI,
         resumeModelAPI:resumeModelAPI,
         recruiterModelAPI:recruiterModelAPI,
-        messageModelAPI:messageModelAPI,
         jobModelAPI:jobModelAPI
     };
     return api;
