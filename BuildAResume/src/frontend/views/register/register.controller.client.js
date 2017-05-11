@@ -1,3 +1,5 @@
+
+
 (function () {
 
     angular
@@ -19,11 +21,18 @@
             vm.checkRePassword = null;
             vm.checkFirstName = null;
             vm.checkEmail = null;
+
+            vm.checkUsernameAvailability = checkUsernameAvailability;
             vm.register = register;
         }
 
         init();
 
+
+        /*
+         * validates user fields.
+         *
+         */
         function register(user) {
 
             if(!validateUser(user)){
@@ -36,6 +45,10 @@
             promise.error(onCreateUserFailure);
         }
 
+
+        /*
+         * validates if user fields are non empty and passwords match.
+         */
         function validateUser(user) {
 
             var isValid = true;
@@ -45,7 +58,7 @@
             } else {
 
                 if(isEmptyOrNull(user.password)) {
-                    vm.checkPassword = "Password cannot be empty";
+                    vm.checkPassword = "Password can not be empty";
                     isValid = false;
                 } else if(isEmptyOrNull(user.repassword)) {
                     vm.checkRePassword = "Please retype passoword";
@@ -87,10 +100,33 @@
 
 
 
+        /*
+         * Checks if username is available for registering.
+         */
+        function checkUsernameAvailability(username){
+
+            var promise = UserService.checkUsernameAvailable(username);
+
+            promise.success(onCheckUsernameAvailableSuccess);
+            promise.error(onCheckUsernameAvailableError);
+
+        }
+
+        /*sets helper message if username is not available.*/
+        function onCheckUsernameAvailableSuccess(response) {
+            if(response.isAvailable == false) {
+                vm.checkUsername = "Username unavailable! Try something else.";
+            }
+            else{
+                vm.checkUsername = "Username available!";
+            }
+        }
+
 
         /*sets helper message if username availability check failed.*/
         function onCheckUsernameAvailableError(response) {
             vm.checkUsername = null;
+
         }
 
 
@@ -98,13 +134,13 @@
         function onCreateUserSuccess(response) {
 
             var user = response;
-            vm.success = "Registration Successful! Please go to home page to login.";
+            vm.success = "Registration Successful! Visit home page to login.";
         }
 
 
         function onCreateUserFailure(err) {
 
-            vm.error = "Server Down.";
+            vm.error = "Failed to create user. Please try again after sometime.";
         }
 
     }
