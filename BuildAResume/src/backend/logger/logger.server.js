@@ -13,7 +13,7 @@ module.exports = function (app) {
 
     var logger = new (winston.Logger)({
         transports: [
-            new (winston.transports.File)({ filename: '/tmp/resbuilder.log' })
+            new (winston.transports.File)({ filename: '/tmp/buildaresume.log' })
         ]
     });
 
