@@ -3,17 +3,9 @@ module.exports = function (app,mongooseAPI) {
     var fs = require('fs');
     var Promise = require('es6-promise').Promise;
     var officeClippy = require('office-clippy');
-    //var userId;
-    //var data;
     var ResumeModel = mongooseAPI.resumeModelAPI;
-    //var filename;
-
     var auth = authorized;
-
-
     app.post("/api/getResumeData/:uid",auth, createDoc);
-
-    /*Passport related functions*/
 
     function authorized (req, res, next) {
         if (!req.isAuthenticated()) {
@@ -23,13 +15,9 @@ module.exports = function (app,mongooseAPI) {
         }
     }
 
-
     function createDoc(req, res) {
-
         var random = Math.random().toString(36).slice(-8);
-
         var userId = req.params.uid;
-
         var filename = userId.toString() + "_" + random.toString();
         var data = req.body;
         createDocHelper(req, res,data,filename,userId);
@@ -38,8 +26,6 @@ module.exports = function (app,mongooseAPI) {
 
 
     function createDocHelper(req, res,data,filename,userId) {
-
-
         var docx = officeClippy.docx;
         var doc = docx.create();
         var title = docx.createText(data['user']['firstName'] + " " + data['user']['lastName']);
@@ -78,6 +64,7 @@ module.exports = function (app,mongooseAPI) {
         var paragraph = docx.createParagraph()
         paragraph.addText(education).thematicBreak();
         paragraph.heading1();
+
         doc.addParagraph(paragraph);
 
         var x = data['technical']['technologies'].length;
@@ -128,7 +115,6 @@ module.exports = function (app,mongooseAPI) {
             paragraph1.addText(list_lang.allCaps());
         }
 
-//Web Technologies
         if (x != 0) {
             var lang = docx.createText("Technologies:").bold().break()
             var list_lang = docx.createText(data['technical']['technologies'].join(", ")).tab();
@@ -136,7 +122,6 @@ module.exports = function (app,mongooseAPI) {
             paragraph1.addText(list_lang.allCaps());
         }
 
-// //software
         if(b != 0) {
             var lang = docx.createText("Software:").bold().break()
             var list_lang = docx.createText(data['technical']['softwares'].join(", ")).tab();
@@ -144,7 +129,6 @@ module.exports = function (app,mongooseAPI) {
             paragraph1.addText(list_lang.allCaps());
         }
 
-//Database
         if(c != 0) {
 
             var lang = docx.createText("Skills:").bold().break()
@@ -155,16 +139,15 @@ module.exports = function (app,mongooseAPI) {
         }
 
         if(d != 0) {
-
             var lang = docx.createText("Operating Systems:").bold().break()
             var list_lang = docx.createText(data['technical']['operatingSystems'].join(", ")).tab();
             paragraph1.addText(lang);
             paragraph1.addText(list_lang.allCaps());
 
         }
+        
         doc.addParagraph(paragraph1)
 
-                //Work Experience
                 var education = docx.createText("WORK EXPERIENCE")
                 education.bold()
                 var paragraph = docx.createParagraph()
@@ -199,7 +182,7 @@ module.exports = function (app,mongooseAPI) {
                     }
                 }
                 //Project
-                var education = docx.createText("PROJECT")
+                var education = docx.createText("PROJECTS")
                 education.bold()
                 var paragraph = docx.createParagraph()
                 paragraph.addText(education).thematicBreak();
@@ -218,7 +201,7 @@ module.exports = function (app,mongooseAPI) {
 
                     for (var k = 0; k < proDes.length; k++) {
                         var text = docx.createText(proDes[k])
-                        var paragraph = docx.createParagraph().bullet();
+                        var paragraph = docx.createParagraph();
                         paragraph.addText(text)
                         doc.addParagraph(paragraph);
                     }
