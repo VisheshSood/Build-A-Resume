@@ -50,7 +50,7 @@ module.exports = function (app, mongoose, logger) {
         var deferred = q.defer();
         ProjectModel.find({userId:userId}, function (err, dbProject) {
             if(err){
-                logger.error('Could not find project for ID: ' + educationId + " and Error: " + err);
+                logger.error('Could not find project for ID: ' + userId + " and Error: " + err);
                 deferred.reject(err);
             } else {
                 deferred.resolve(dbProject);
@@ -63,7 +63,7 @@ module.exports = function (app, mongoose, logger) {
         var deferred = q.defer();
         ProjectModel.update({_id:projectId},{$set:project}, function (err, dbProject) {
             if(err) {
-                logger.error('Could not update project for ID: ' + educationId + " and Error: " + err);
+                logger.error('Could not update project for ID: ' + projectId + " and Error: " + err);
                 deferred.reject(err);
             }
             else {
@@ -78,7 +78,7 @@ module.exports = function (app, mongoose, logger) {
         var deferred = q.defer();
         ProjectModel.remove({_id:projectId}, function (err) {
             if(err) {
-                logger.error('Could not delete project for ID: ' + educationId + " and Error: " + err);
+                logger.error('Could not delete project for ID: ' + projectId + " and Error: " + err);
                 deferred.reject(err);
             }
             else {

@@ -29,9 +29,7 @@ module.exports = function (app, mongoose, logger) {
         getAdminInfo:getAdminInfo,
         updateUserPasswordByAdmin:updateUserPasswordByAdmin
     };
-
     return api;
-
 
     function updateUserPasswordByAdmin(userId,newPassWord) {
 
@@ -380,19 +378,15 @@ module.exports = function (app, mongoose, logger) {
 
     function updateUserPassword(userId, oldPassword, newPassword) {
         var deferred = q.defer();
-
         UserModel.findById(userId, function (err, user) {
-
             if(err){
                 logger.error(err);
                 deferred.reject(err);
             } else {
                 if(user && bcrypt.compareSync(oldPassword, user.password)){
                     user.password = bcrypt.hashSync(newPassword);
-
                     UserModel.update({_id:userId},{$set:user}, function (err, dbUser) {
                         if(err) {
-
                             logger.error("Can not update user with id " + userId  + " Error: " + err);
                             deferred.reject(err);
                         }
@@ -406,7 +400,6 @@ module.exports = function (app, mongoose, logger) {
                 }
             }
         });
-
         return deferred.promise;
     }
 }

@@ -25,7 +25,7 @@ module.exports = function (app, mongoose, logger) {
         var deferred = q.defer();
         WorkExpModel.create(workExp, function (err, dbWorkExp) {
             if(err){
-                logger.error('Unable to create workExp.' + err);
+                logger.error('Could not create work experience. Error: ' + err);
                 deferred.reject(err);
             } else {
                 deferred.resolve(dbWorkExp);
@@ -37,9 +37,8 @@ module.exports = function (app, mongoose, logger) {
     function findWorkExpById(workExpId) {
         var deferred = q.defer();
         WorkExpModel.findById(workExpId, function (err, dbWorkExp) {
-
             if(err){
-                logger.error('Unable to find workExp. Id: ' + workExpId + "Error: " + err);
+                logger.error('Could not find work experience for ID: ' + workExpId + " and Error: " + err);
                 deferred.reject(err);
             } else {
                 deferred.resolve(dbWorkExp);
@@ -51,9 +50,8 @@ module.exports = function (app, mongoose, logger) {
     function findWorkExpForUser(userId) {
         var deferred = q.defer();
         WorkExpModel.find({userId:userId}, function (err, dbWorkExp) {
-
             if(err){
-                logger.error("Can not find workExp for user " + userId + " Error: "+ err);
+                logger.error('Could not find work experience for ID: ' + userId + " and Error: " + err);
                 deferred.reject(err);
             } else {
                 deferred.resolve(dbWorkExp);
@@ -63,45 +61,31 @@ module.exports = function (app, mongoose, logger) {
     }
 
     function updateWorkExp(workExpId, workExp) {
-
         var deferred = q.defer();
         WorkExpModel.update({_id:workExpId},{$set:workExp}, function (err, dbWorkExp) {
             if(err) {
-                logger.erro("Can not update workExp with id " + workExpId  + " Error: " + err);
+                logger.error('Could not update work experience for ID: ' + workExpId + " and Error: " + err);
                 deferred.reject(err);
             }
             else {
                 deferred.resolve(dbWorkExp);
             }
         });
-
         return deferred.promise;
     }
 
-
-
-    /*
-     * deleteWorkExp: deletes workExp from database.
-     * params: workExpId
-     * returns: promise
-     */
     function deleteWorkExp(workExpId) {
-
         var deferred = q.defer();
-
         WorkExpModel.remove({_id:workExpId}, function (err) {
             if(err) {
-                logger.error("Can not delete workExp with id " + workExpId + " Error: " + err);
+                logger.error('Could not delete work experience for ID: ' + workExpId + " and Error: " + err);
                 deferred.reject(err);
             }
             else {
                 deferred.resolve(200);
             }
         });
-
         return deferred.promise;
     }
-
-
 }
 

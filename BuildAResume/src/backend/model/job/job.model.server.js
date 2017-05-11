@@ -36,7 +36,7 @@ module.exports = function (app, mongoose, logger) {
         var deferred = q.defer();
         JobModel.findById(jobId, function (err, dbJob) {
             if(err){
-                logger.error('Unable to find job. Id: ' + jobId + "Error: " + err);
+                logger.error('Could not find job for ID: ' + jobId + "Error: " + err);
                 deferred.reject(err);
             } else {
                 deferred.resolve(dbJob);
@@ -49,7 +49,7 @@ module.exports = function (app, mongoose, logger) {
         var deferred = q.defer();
         JobModel.find({userId:userId}, function (err, dbJob) {
             if(err && !dbJob){
-                logger.error('Could not find job for ID: ' + educationId + " and Error: " + err);
+                logger.error('Could not find job for ID: ' + userId + " and Error: " + err);
 
                 deferred.reject(err);
             } else {
@@ -64,24 +64,21 @@ module.exports = function (app, mongoose, logger) {
         var deferred = q.defer();
         JobModel.update({_id:jobId},{$set:job}, function (err, dbJob) {
             if(err) {
-                logger.error('Could not update job for ID: ' + educationId + " and Error: " + err);
+                logger.error('Could not update job for ID: ' + jobId + " and Error: " + err);
                 deferred.reject(err);
             }
             else {
                 deferred.resolve(job);
             }
         });
-
         return deferred.promise;
     }
 
     function deleteJob(jobId) {
-
         var deferred = q.defer();
-
         JobModel.remove({_id:jobId}, function (err) {
             if(err) {
-                logger.error('Could not delete job for ID: ' + educationId + " and Error: " + err);
+                logger.error('Could not delete job for ID: ' + jobId + " and Error: " + err);
                 deferred.reject(err);
             }
             else {
