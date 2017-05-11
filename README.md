@@ -1,4 +1,4 @@
-## Build A Resume##
+## Build A Resume ##
 
 Our project allows users to enter job links from any website, to allow us to parse the job description to create a suited resume for the job application.
 
