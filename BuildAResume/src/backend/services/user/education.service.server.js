@@ -10,9 +10,8 @@ module.exports = function (app, mongooseAPI) {
     app.get("/api/education/user/:userId", checkAuthorizedUser, getEducationForUser);
     app.put("/api/education/:educationId", checkAuthorizedUser, updateEducation);
     app.delete("/api/education/:educationId", checkAuthorizedUser, deleteEducation);
-    
-    var EducationModel = mongooseAPI.educationModelAPI;
 
+    var EducationModel = mongooseAPI.educationModelAPI;
 
     function checkAuthorizedUser (req, res, next) {
         if (!req.isAuthenticated()) {
