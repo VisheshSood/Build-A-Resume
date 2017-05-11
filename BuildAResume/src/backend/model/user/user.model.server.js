@@ -1,7 +1,9 @@
 /*
- *  User database service.
- *
- */
+    * 
+    * Build A Resume User API
+    *
+*/
+
 module.exports = function (app, mongoose, logger) {
 
     var q = require('q');

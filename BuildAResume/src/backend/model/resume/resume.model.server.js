@@ -1,7 +1,9 @@
 /*
- *  API for Resume schema in mongoose db.
- *
- * */
+    * 
+    * Build A Resume Resume API
+    *
+*/
+
 
 module.exports = function (app, mongoose, logger) {
 

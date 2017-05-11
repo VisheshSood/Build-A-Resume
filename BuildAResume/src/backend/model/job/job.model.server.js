@@ -23,7 +23,7 @@ module.exports = function (app, mongoose, logger) {
         var deferred = q.defer();
         JobModel.create(job, function (err, dbJob) {
             if(err){
-                logger.error('Unable to create job.' + err);
+                logger.error('Job was not created. Error: ' + err);
                 deferred.reject(err);
             } else {
                 deferred.resolve(dbJob);

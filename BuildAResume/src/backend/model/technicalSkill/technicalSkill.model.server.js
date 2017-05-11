@@ -1,7 +1,8 @@
 /*
-*  API for Education schema in mongoose db.
-*
-* */
+    * 
+    * Build A Resume Skills API
+    *
+*/
 
 module.exports = function (app, mongoose, logger) {
 
