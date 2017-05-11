@@ -10,11 +10,9 @@
 
             function init() {
                 vm.error = null;
-                vm.recruiterError = null;
 
                 //functions
                 vm.login = login;
-                vm.loginRecruiter = loginRecruiter;
 
             }
 
@@ -32,23 +30,6 @@
                 promise.success(onLoginSuccess);
                 promise.error(onLoginFailure);
             }
-
-
-
-            function loginRecruiter(recruiter) {
-
-                if(null == recruiter || null == recruiter.username || null == recruiter.password){
-                    vm.recruiterError = "Empty username/password.";
-                    return;
-                }
-
-                var promise = RecruiterService.findRecruiterByCredentials(recruiter.username, recruiter.password);
-
-                promise.success(onRecruiterLoginSuccess);
-                promise.error(onRecruiterLoginFailure);
-            }
-
-
 
             
             /* Promise handlers*/
@@ -73,24 +54,6 @@
 
             function onLoginFailure(response) {
                 vm.error = "Could not find user. Incorrect password.";
-            }
-
-
-
-            /*recruiter login promise handlers*/
-            function onRecruiterLoginSuccess(response) {
-
-                var user = response;
-                if(user){
-                    $location.url("/recruiter/" + user._id + "/dashboard")
-                } else{
-                    vm.recruiterError = "Invalid Credentials.";
-                }
-
-            }
-
-            function onRecruiterLoginFailure(response) {
-                vm.recruiterError = "Could not find user. Error: " + response;
             }
 
     }
