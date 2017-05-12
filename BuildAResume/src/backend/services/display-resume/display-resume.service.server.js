@@ -1,3 +1,9 @@
+/*
+    * 
+    * Build A Resume Server Service to Display and Download Resumes
+    *
+*/
+
 module.exports = function (app,mongooseAPI) {
 
 
@@ -8,8 +14,6 @@ module.exports = function (app,mongooseAPI) {
     app.get("/api/downloadResumeDOCX/:resumeId", checkAuthorizedRequest, downloadDocx);
 
     var ResumeModel = mongooseAPI.resumeModelAPI;
-
-    /*Passport related functions*/
 
     function checkAuthorizedRequest (req, res, next) {
         if (!req.isAuthenticated()) {
@@ -22,7 +26,7 @@ module.exports = function (app,mongooseAPI) {
     function downloadPDF(req,res) {
         var resumeId = req.params.resumeId;
         if(resumeId == null){
-            res.sendStatus(500).send("null resumeId");
+            res.sendStatus(500).send("ResumeID is Null");
             return;
         }
 
@@ -30,7 +34,7 @@ module.exports = function (app,mongooseAPI) {
             .findResumeById(resumeId)
             .then(function (resume) {
                 if(resume == null){
-                    res.sendStatus(500).send("null resume");
+                    res.sendStatus(500).send("Resume is Null");
                     return;
                 }
                 var presentDir = __dirname + "/../../uploads/pdf/"
@@ -52,10 +56,9 @@ module.exports = function (app,mongooseAPI) {
     }
 
     function downloadDocx(req,res) {
-
         var resumeId = req.params.resumeId;
         if(resumeId == null){
-            res.sendStatus(500).send("null resumeId");
+            res.sendStatus(500).send("ResumeID is Null");
             return;
         }
 
@@ -63,7 +66,7 @@ module.exports = function (app,mongooseAPI) {
             .findResumeById(resumeId)
             .then(function (resume) {
                 if(resume == null){
-                    res.sendStatus(500).send("null resume");
+                    res.sendStatus(500).send("Resume is Null");
                     return;
                 }
 
@@ -87,7 +90,7 @@ module.exports = function (app,mongooseAPI) {
     function displayPDF(req,res) {
         var resumeId = req.params.resumeId;
         if(resumeId == null){
-            res.sendStatus(500).send("null resumeId");
+            res.sendStatus(500).send("ResumeID is Null");
             return;
         }
 
@@ -95,7 +98,7 @@ module.exports = function (app,mongooseAPI) {
             .findResumeById(resumeId)
             .then(function (resume) {
                 if(resume == null){
-                    res.sendStatus(500).send("null resume");
+                    res.sendStatus(500).send("Resume is Null");
                     return;
                 }
 
@@ -117,7 +120,7 @@ module.exports = function (app,mongooseAPI) {
     function displayDocx(req,res) {
         var resumeId = req.params.resumeId;
         if(resumeId == null){
-            res.sendStatus(500).send("null resumeId");
+            res.sendStatus(500).send("ResumeID is Null");
             return;
         }
 
@@ -125,7 +128,7 @@ module.exports = function (app,mongooseAPI) {
             .findResumeById(resumeId)
             .then(function (resume) {
                 if(resume == null){
-                    res.sendStatus(500).send("null resume");
+                    res.sendStatus(500).send("Resume is Null");
                     return;
                 }
 
