@@ -11,7 +11,8 @@ words = ["Agile","Applications","ASP.NET","Build","C#","HTML","CSS","Mongodb","A
 "ExpressJS","MEAN","ASP.NET","MySQL","Oracle","ADO.NET","Script", "Code","CoffeeScript","TypeScript", "Ruby","Python",
 "Flask","Rails","Rest API","API","Collaborate", "Data","Design","Development","Engineering","Environment","Java",
 "Javascript","Knowledge","Mobile",".NET","Product","Projects","Software","Solutions","SQL","Team","Technologies",
-"Testing","Tools","Bootsrap","C++","C","Web"]
+"Testing","Tools","Bootsrap","C++","C","Web", "iOS", "JS", "Android", "HTML5", "CSS3", "SQL", 
+"Swift", "React", "Redux", "PHP", "Scala"]
 
 list_tags = soup.findAll('li')
 words = [item.lower() for item in words]
