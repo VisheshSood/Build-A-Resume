@@ -1,3 +1,6 @@
+body {
+   background-color: #837869;
+}
 .container-if-fixed-header
 {
     margin-top:70px;
@@ -142,15 +145,6 @@ tags-input input {
     margin-top:5px;
     word-wrap: break-word;
 }
-
-
-
-.card-recruiter{
-    height:8em;
-    background-color: #e74c3c;
-    color:white;
-}
-
 
 .custom-card {
     background: #fff;
