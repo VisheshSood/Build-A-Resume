@@ -1,5 +1,5 @@
 body {
-   background-color: #837869;
+   /*background-color: #837869;*/
 }
 .container-if-fixed-header
 {
@@ -21,7 +21,6 @@ body {
 }
 
 #mycontent-right:after {
-    /*content: "";*/
     background-color: #000;
     position: absolute;
     width: 1px;
