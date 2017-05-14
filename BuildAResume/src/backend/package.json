@@ -1,7 +1,7 @@
 {
-  "name": "resbuilder",
+  "name": "BuildAResume",
   "version": "1.0.0",
-  "description": "Resume builder webapp",
+  "description": "Build Custom Resumes",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.15.1",
