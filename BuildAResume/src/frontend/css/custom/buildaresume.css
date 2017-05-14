@@ -117,7 +117,7 @@ tags-input input {
 }
 
 .signin-background{
-    background-color: #837869;
+    background-color: #837869 !important;
     padding-top:50px;
     padding-bottom:50px;
 
