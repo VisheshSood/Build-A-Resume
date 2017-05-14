@@ -4,7 +4,7 @@
         .module("ResumeBuilder")
         .controller("LoginController", LoginController);
 
-    function LoginController($location, UserService, RecruiterService) {
+    function LoginController($location, UserService) {
 
             var vm = this;
 

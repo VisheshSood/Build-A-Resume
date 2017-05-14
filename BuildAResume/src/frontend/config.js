@@ -25,34 +25,9 @@
                 controller: "RegisterController",
                 controllerAs: "model"
             })
-            .when("/recruiter-register", {
-                templateUrl: "views/register/recruiter-register.view.client.html",
-                controller: "RecruiterRegisterController",
-                controllerAs: "model"
-            })
-            .when("/recruiter/:rid/dashboard", {
-                templateUrl: "views/dashboard/recruiter-dashboard.view.client.html",
-                controller: "RecruiterDashBoardController",
-                controllerAs: "model"
-            })
-            .when("/recruiter/:rid/profile", {
-                templateUrl: "views/recruiter/recruiter.basicprofile.edit.view.client.html",
-                controller: "RecruiterBasicProfileEditController",
-                controllerAs: "model"
-            })
-            .when("/recruiter/:rid/messages", {
-                templateUrl: "views/message/recruiter.message.list.view.client.html",
-                controller: "RecruiterMessageListController",
-                controllerAs: "model"
-            })
             .when("/user/:uid/messages", {
                 templateUrl: "views/message/user.message.list.view.client.html",
                 controller: "UserMessageListController",
-                controllerAs: "model"
-            })
-            .when("/recruiter/:rid/:uid/:firstName/:companyName/newmessage", {
-                templateUrl: "views/message/recruiter.message.send.view.client.html",
-                controller: "MessageSendController",
                 controllerAs: "model"
             })
             .when("/user/:uid/dashboard", {
@@ -90,11 +65,6 @@
                 controller: "BasicProfileAdminEditController",
                 controllerAs: "model"
             })
-            .when("/admin/:aid/recruiter/:rid/basicprofile", {
-                templateUrl: "views/admin/admin.manage.recruiter-edit.client.html",
-                controller: "RecruiterBasicProfileAdminEditController",
-                controllerAs: "model"
-            })
             .when("/user/:uid/basicprofile", {
                 templateUrl: "views/user/user.basicprofile.edit.view.client.html",
                 controller: "BasicProfileEditController",
@@ -130,11 +100,6 @@
                 controller: "UserContactController",
                 controllerAs: "model"
             })
-            .when("/recruiter/:rid/contact", {
-                templateUrl: "views/recruiter/recruiter.contact.view.client.html",
-                controller: "RecruiterContactController",
-                controllerAs: "model"
-            })
             .when("/user/:uid/workexp/:wid", {
                 templateUrl: "views/user/user.work.edit.view.client.html",
                 controller: "EditWorkExpController",
@@ -148,16 +113,6 @@
             .when("/admin/:aid/user", {
                 templateUrl: "views/admin/admin.manage.user.view.client.html",
                 controller: "AdminManageUserController",
-                controllerAs: "model"
-            })
-            .when("/admin/:aid/recruiter", {
-                templateUrl: "views/admin/admin.manage.user.view.client.html",
-                controller: "AdminManageRecruiterController",
-                controllerAs: "model"
-            })
-            .when("/admin/:aid/message", {
-                templateUrl: "views/admin/admin.message.list.view.client.html",
-                controller: "AdminMessageController",
                 controllerAs: "model"
             })
             .when("/unauthorized", {
