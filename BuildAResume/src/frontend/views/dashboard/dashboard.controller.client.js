@@ -190,9 +190,8 @@
         function GetResumeData(sw) {
 
             if(sw === 0) {
-
                 if(vm.JobURL == null || vm.JobURL == ""){
-                    vm.error = "Empty job description";
+                    vm.error = "Job Description Invalid!";
                     return;
                 }
                 else {
@@ -200,9 +199,16 @@
                     ResumeDataService.setUrl(vm.JobURL);
                 }
 
-            }
-            else {
+            } else if (sw === 1) {
+                if(vm.JobDescription == null || vm.JobDescription == ""){
+                    vm.error = "Job Description Invalid!";
+                    return;
+                }
+                else {
+                    ResumeDataService.setUrl(vm.JobDescription);
+                }
 
+            } else {
                 ResumeDataService.setUrl(sw);
 
             }

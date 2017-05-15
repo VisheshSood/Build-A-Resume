@@ -46,7 +46,6 @@ module.exports = function (app,mongooseAPI) {
                     output = out
                     getData(userId)
                         .then(function (jsonOut) {
-                            console.log(jsonOut);
                             resolve(jsonOut)
                         });
                 });
@@ -125,8 +124,6 @@ module.exports = function (app,mongooseAPI) {
                     "work":WorkDetails,
                     "technical":technicalSkillDetails
                 }
-
-
                 res.send(data);
                 return true;
             },function (err) {
