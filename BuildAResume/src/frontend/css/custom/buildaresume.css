@@ -72,6 +72,8 @@ tags-input .tags input
 {
     display: inline-block;
     margin: 2em;
+    margin-top: 0;
+    margin-bottom: 1em;
     /*line-height: 1px!important;*/
     font-size: 10px;
     height: 30px !important;
