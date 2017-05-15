@@ -26,7 +26,8 @@ html { height: 100%;}
 
 #navbar .subtitle {
     color: black; 
-    padding: 1.5em;  
+    border-bottom-style: solid;
+    padding: 1em;  
 }
 
 #bear {
