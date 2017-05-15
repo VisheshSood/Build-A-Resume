@@ -1,9 +1,9 @@
 module.exports = function (app) {
 
 
-    //var connectionString = 'ec2-34-208-4-60.us-west-2.compute.amazonaws.com:27017/test';
+    var connectionString = 'ec2-34-208-4-60.us-west-2.compute.amazonaws.com:27017/test';
     //var connectionString = 'https://www.build-a-resume.com:27017/test';
-    var connectionString = 'mongodb://127.0.0.1:27017/test';
+    //var connectionString = 'mongodb://127.0.0.1:27017/test';
 
     var mongoose = require("mongoose");
     mongoose.connect(connectionString);
