@@ -130,10 +130,14 @@ tags-input.ng-invalid .tags {
     border: 1px solid #cccccc !important;
 }
 
+.card {
+    color: black;
+}
+
 .card-header{
     height:8em;
     background-color: #2c3e50;
-    color:black;
+    color:white;
 }
 
 .signin-background{
