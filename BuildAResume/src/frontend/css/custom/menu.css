@@ -13,15 +13,20 @@ html { height: 100%;}
 }
 
 #navbar {
-    background-color: #837869;
+    background-color: #3C3C3B;
     color: white;
     padding-bottom: 1vw;
     font-weight: bold;
 }
 
 #navbar a {
-    color: black;
+    color: white;
     font-size: : 2em !important;
+}
+
+#navbar .subtitle {
+    color: black; 
+    padding: 1.5em;  
 }
 
 #bear {

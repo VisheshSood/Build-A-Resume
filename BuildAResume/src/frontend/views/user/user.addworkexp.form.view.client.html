@@ -25,7 +25,7 @@
                     <label for="textArea" class="col-lg-3 control-label">Description</label>
                     <div class="col-lg-9">
                         <textarea class="form-control" rows="3" id="textArea" ng-model="model.workexp.description"></textarea>
-                        <span class="help-block">It is better to have short descriptive sentences. Like: <br/><br/> Wrote stats scrapper to analyze trending actors in R. Designed and wrote test cases in JUnit.</span>
+                        <span class="help-block" style="color:white;">It is better to have short descriptive sentences. Like: <br/><br/> Wrote stats scrapper to analyze trending actors in R. Designed and wrote test cases in JUnit.</span>
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@
                     <div class="col-lg-9">
                         <tags-input required name="technology" replace-spaces-with-dashes="false" min-length="1" type="text" ng-model="model.workexp.technologies" placeholder="Technologies"></tags-input>
                         <div ng-messages="workForm.technology.$touched && workForm.technology.$error">
-                            <p class="text-warning" ng-message="required">the technology is required.</p>
+                            <p class="text-warning" ng-message="required">Technologies used is required.</p>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 body {
-   /*background-color: #837869;*/
+   background-color: #685B56;
+   color: white !important;
 }
 .container-if-fixed-header
 {
@@ -14,6 +15,9 @@ body {
     margin-top: 15px !important; 
 }
 
+.text-center {
+    color: white !important;
+}
 #mycontent-left {
     float: left;
     height: 200px;
@@ -29,11 +33,11 @@ body {
 }
 
 .fa {
-    color: black;
+    color: white;
 }
 
 .btn {
-    background-color: black !important;
+    background-color: #3C3C3B !important;
     color: white;
 }
 
@@ -66,11 +70,20 @@ tags-input .tags input
     /*line-height: 1px!important;*/
     font-size: 10px;
     height: 30px !important;
+    color: black;
 }
 
 tags-input input {
     width: 100px !important;
 }
+
+tags-input.ng-invalid .tags {
+    border-color: white;
+    -webkit-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0px #ce8483; 
+    -moz-box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0px #ce8483;
+     box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.075), 0 0 0px #ce8483; 
+}
+
 .addeducation-large
 {
     float: left;
@@ -117,7 +130,7 @@ tags-input input {
 }
 
 .signin-background{
-    background-color: #837869 !important;
+    background-color: #685B56 !important;
     padding-top:50px;
     padding-bottom:50px;
 

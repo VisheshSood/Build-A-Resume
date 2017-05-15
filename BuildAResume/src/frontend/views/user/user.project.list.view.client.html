@@ -8,7 +8,7 @@
                    <span class="form-control help-block"  ng-show="model.error" ng-model="model.error" disabled="">{{model.error}}</span>
                </div>
                <div class="col-lg-12">
-                   <legend>Technical Skills</legend>
+                   <legend class="text-center">Technical Skills</legend>
                    <hr/>
                    <div class="form-group">
                        <div>
@@ -60,7 +60,7 @@
 
         <div class="row">
             <div class="col-sm-12 col-xs-12 col-lg-12 col-md-6">
-                <legend class="col-lg-12" >Add Project</legend>
+                <legend class="col-lg-12 text-center" >Add Project</legend>
                 <div  class="addeducation-large" ng-include="'./views/user/user.addproject.form.view.client.html'"></div>
                 <hr/>
 
@@ -69,15 +69,15 @@
         <div class="col-sm-12 col-xs-12 col-lg-12 col-md-6">
                <form class="form-horizontal">
                    <fieldset>
-                       <legend style="margin-left: 0;">Past Projects</legend>
+                       <legend style="margin-left: 0;" class="text-center">Past Projects</legend>
                         <hr/>
 
                        <div class="col-lg-12">
-                           <span class="form-control help-block"  ng-show="model.noprojects" ng-model="model.noprojects" disabled="">{{model.noprojects}}</span>
+                           <span class="form-control help-block" ng-show="model.noprojects" ng-model="model.noprojects" disabled="">{{model.noprojects}}</span>
                        </div>
                        <div class="list-group">
                            <div ng-repeat="p in model.projectList">
-                               <div href="#" class="list-group-item list-group-item-bordered">
+                               <div href="#" class="list-group-item list-group-item-bordered" style="background-color: #685B56;">
                                    <h3 class="list-group-item-heading">{{p.title}}</h3>
                                    <h5 class="list-group-item-text">{{p.startDate}}-{{p.endDate}}</h5>
                                    <h5 class="list-group-item-text">{{p.description}}</h5>
