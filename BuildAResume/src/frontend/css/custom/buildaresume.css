@@ -51,6 +51,11 @@ body {
     margin-top: 100px;
 }
 
+
+.login-box .fa {
+    color: black;
+}
+
 tags-input .tags .tag-item
 {
     display: inline-block;
