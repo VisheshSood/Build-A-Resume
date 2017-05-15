@@ -32,6 +32,10 @@ body {
     display: block;
 }
 
+.list-group-item {
+    color: black !important;
+}
+
 .fa {
     color: white;
 }
