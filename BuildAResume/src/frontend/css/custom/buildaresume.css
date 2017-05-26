@@ -44,6 +44,15 @@ h1, h2, h3, h4, h5, h6, p, .h1, .h2, .h3, .h4, .h5, .h6, .p{
     color: white !important;
 }
 
+.list-group-item:hover {
+    color: red;
+}
+
+.list-group-item-save {
+    color: white !important;
+}
+
+
 .list-group-item-resume {
     color: black !important;
 }

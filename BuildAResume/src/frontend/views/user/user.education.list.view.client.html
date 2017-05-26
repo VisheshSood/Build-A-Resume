@@ -33,17 +33,16 @@
                        <div class="list-group">
                            <div ng-repeat="e in model.educationList">
                                <div href="#" class="list-group-item list-group-item-bordered" style="background-color: #685B56;">
-                                   <h3 class="list-group-item-heading">{{e.school}}</h3>
-                                   <h4 class="list-group-item-text">{{e.degree}}, {{e.field}}</h4>
-                                   <h5 class="list-group-item-text">{{e.startYear}} - {{e.endYear}}</h5>
+                                   <h2 class="list-group-item-heading">{{e.school}}</h3>
+                                   <h3 class="list-group-item-text">{{e.degree}}, {{e.field}}</h4>
+                                   <h4 class="list-group-item-text">{{e.startYear}} - {{e.endYear}}</h5>
                                    <br/>
                                    <div>
-                                       <label>Courses</label>
-                                       <p>{{model.arrayToString(e.courses)}}</p>
+                                       <h4 style="text-decoration: underline;">Courses</h4>
+                                       <h4>{{model.arrayToString(e.courses)}}</h4>
                                    </div>
                                    <div>
-                                       <label>Grade</label>
-                                       <p>{{e.grade}}</p>
+                                       <h4 style="text-decoration: underline;">Grade: </h4>   {{e.grade}}
                                    </div>
 
                                    <a ng-click="model.deleteEducation(e._id)"><i class="fa fa-trash pull-right fa-2x"></i></a>

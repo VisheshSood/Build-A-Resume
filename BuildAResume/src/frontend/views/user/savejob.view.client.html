@@ -13,7 +13,7 @@
     <div class="row">
            <div class="col-md-12">
                <form name="saveJobForm">
-                   <h4 class="jumbo-tag-1 text-center" style="margin-bottom: 2em;">Save A Job</h4>
+                   <h3 class="jumbo-tag-1 text-center" style="margin-bottom: 2em;">Save A Job</h4>
                    <div class="form-group">
                        <label for="title" class="col-lg-3 control-label" style="margin-bottom: 5em;">Company Name *</label>
                        <div class="col-lg-9">
@@ -64,14 +64,13 @@
                       <span class="col-sm-12 text-warning text-center" ng-show="model.noJobsMessage">{{model.noJobsMessage}}</span>
                   </div>
                   <div ng-repeat="sj in model.savedJobList">
-                      <div class="list-group">
-                          <a class="list-group-item clearfix">
+                      <div class="list-group-item list-group-item-bordered" style="background-color: #685B56;">
+                          <a class="list-group-item-save clearfix">
                                   <span>
-                                      <h4>{{sj.companyName}}</h4>
-                                      <p>{{sj.jobUrl}}</p>
-                                      <p>{{sj.note}}</p>
+                                    <h3><b>Company Name : </b> {{sj.companyName}}</h3>
+                                      <h4>Job URL : {{sj.jobUrl}}</h4>
+                                      <h4>Additional Comments :{{sj.note}}</p>
                                   </span>
-
                                   <span class="pull-right">
                                   <button ng-click="model.editJob(sj._id)" class="btn btn-xs">
                                       <span><i class="fa fa-pencil" style="color: white;"></i></span>
