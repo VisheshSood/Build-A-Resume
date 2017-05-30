@@ -145,7 +145,10 @@ module.exports = function (app,mongooseAPI) {
                     var position = docx.createText(data['work'][j1]['jobTitle']).bold().break();
                     paragraph.addText(position);
                     doc.addParagraph(paragraph);
-                    var listDes = data['work'][j1]['description'].split("\n")
+                    var listDes = []
+                    if (data['work'][j1]['description'] != null) {
+                        listDes = data['work'][j1]['description'].split("\n")
+                    }
                     for (var k = 0; k < listDes.length; k++) {
                         var text = docx.createText(listDes[k]);
                         var paragraph = docx.createParagraph().bullet();
