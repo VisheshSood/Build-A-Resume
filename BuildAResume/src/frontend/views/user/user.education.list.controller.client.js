@@ -114,8 +114,6 @@
         }
 
 
-
-
         function onDeleteEducationSuccess(response) {
             findEducationForUser();
         }
@@ -126,7 +124,6 @@
                 $location.url(ERROR_REDIRECT);
             }
         }
-
 
         function arrayToString(array) {
             return array.join(', ');

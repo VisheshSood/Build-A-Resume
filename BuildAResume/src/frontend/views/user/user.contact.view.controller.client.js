@@ -6,21 +6,17 @@
         .controller("UserContactController", UserContactController);
 
     function UserContactController($location, $routeParams, AdminService, MessageService, UserService) {
-
         var vm = this;
         var ERROR_REDIRECT = "/unauthorized";
         var ERR_401 = "Unauthorized";
-
         function init() {
 
             vm.userId = $routeParams['uid'];
             vm.uid = $routeParams['uid'];
             vm.currentUID = vm.uid;
             vm.adminId = null;
-
             vm.sendMessage = sendMessage;
             vm.logout = logout;
-
             getAdminInfo();
         }
 
