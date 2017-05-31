@@ -226,18 +226,15 @@ module.exports = function (app,mongooseAPI) {
         resolve(jsonOutOne)
         });
     }
-
     function getData(userId) {
 
 
         return new Promise(function (resolve,reject) {
-
             var educationDetails;
             var projectDetails;
             var technicalSkillDetails;
             var userDetails;
             var workDetails;
-
             EducationModel.findEducationForUser(userId)
                 .then(function (education) {
 

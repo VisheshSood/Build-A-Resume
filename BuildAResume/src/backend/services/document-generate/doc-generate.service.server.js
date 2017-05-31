@@ -146,16 +146,16 @@ module.exports = function (app,mongooseAPI) {
                     paragraph.addText(position);
                     doc.addParagraph(paragraph);
                     var listDes = []
-                    if (data['work'][j1]['description'] != null) {
+                    if (data['work'][j1]['description'] != null || data['work'][j1]['description'] != undefined) {
                         listDes = data['work'][j1]['description'].split("\n")
+                        for (var k = 0; k < listDes.length; k++) {
+                            var text = docx.createText(listDes[k]);
+                            var paragraph = docx.createParagraph().bullet();
+                            paragraph.addText(text)
+                            doc.addParagraph(paragraph);
+                        }
                     }
-                    for (var k = 0; k < listDes.length; k++) {
-                        var text = docx.createText(listDes[k]);
-                        var paragraph = docx.createParagraph().bullet();
-                        paragraph.addText(text)
-                        doc.addParagraph(paragraph);
-
-                    }
+                   
                 }
                 var education = docx.createText("PROJECTS")
                 education.bold()
